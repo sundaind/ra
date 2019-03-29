@@ -20,7 +20,7 @@ let guilds = {};
 client.on('ready', function () {
   console.log(`Logged in as ${client.user.username}#${client.user.discriminator}`);
   client.User = client.user;
-  client.User.setActivity('PEMUTAR MUSIK!', { type: 'STREAMING' });
+  client.User.setActivity('CAPSUL_FLY MUSIK!', { type: 'STREAMING' });
 });
 
 client.on('message', function (message) {
@@ -42,7 +42,7 @@ client.on('message', function (message) {
 
   if (message.author.equals(client.user) || message.author.bot) return;
 
-  if (msg.startsWith(prefix + 'play')) {
+  if (msg.startsWith(prefix + 'putar')) {
     if (member.voiceChannel || guilds[message.guild.id].voiceChannel != null) {
       if (guilds[message.guild.id].queue.length > 0 || guilds[message.guild.id].isPlaying) {
         getID(args, function (id) {
@@ -53,7 +53,7 @@ client.on('message', function (message) {
             }
 
             guilds[message.guild.id].queueNames.push(videoinfo.title);
-            message.reply('the song: **' + videoinfo.title + '** has been added to the queue.');
+            message.reply('Judul Lagu: **' + videoinfo.title + '** Akan Segera Di putar.');
           });
         });
       } else {
@@ -67,7 +67,7 @@ client.on('message', function (message) {
             }
 
             guilds[message.guild.id].queueNames.push(videoinfo.title);
-            message.reply('the song: **' + videoinfo.title + '** is now playing!');
+            message.reply('Judul Lagu: **' + videoinfo.title + '** is now playing!');
           });
         });
       }
