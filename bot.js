@@ -20,7 +20,7 @@ let guilds = {};
 client.on('ready', function () {
   console.log(`Logged in as ${client.user.username}#${client.user.discriminator}`);
   client.User = client.user;
-  client.User.setActivity('CAPSUL_FLY MUSIK!', { type: 'STREAMING' });
+  client.User.setActivity('TES BOT', { type: 'STREAMING' });
 });
 
 client.on('message', function (message) {
